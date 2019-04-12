@@ -1,15 +1,18 @@
-# https://spotipy.readthedocs.io/en/latest/
 import spotipy
-from spotipy.oauth2 import SpotifyClientCredentials
-from clients import client_credentials_manager, username
+import spotipy.util as util
+from clients import client_id, client_secret, username, redirect_uri
 
-sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
+print(spotipy.VERSION)
 
-playlists = sp.user_playlists(username)
-while playlists:
-    for i, playlist in enumerate(playlists['items']):
-        print("%4d %s %s" % (i + 1 + playlists['offset'], playlist['uri'],  playlist['name']))
-    if playlists['next']:
-        playlists = sp.next(playlists)
-    else:
-        playlists = None
+scope = 'user-read-currently-playing'
+
+token = util.prompt_for_user_token( username,
+                                    scope,
+                                    client_id = client_id,
+                                    client_secret = client_secret,
+                                    redirect_uri = redirect_uri)
+
+sp = spotipy.Spotify(auth=token)
+current_track_info = sp.current_user_playing_track()
+
+print(current_track_info)
