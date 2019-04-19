@@ -1,11 +1,15 @@
 # Audio-Visualization
 # Audio-Visualization Utilizing Spotify Song Data
-Harrison-AlexScott-DavidT
+Authors: Alex Scott, David Tarazi, Harrison Mintz
 
 The purpose of this code is to create engaging visualizations that play
 alongside a User's Spotify music.  These visualizations utilize different
 numerical elements of a song, such as its tempo, intensity, and danceability,
-to ensure the vibe of the visualization matches the vibe of the song.
+to ensure the vibe of the visualization matches the vibe of the song.  The
+visualizations fall into two general categories.  The first type of 
+visualization shows pulsing circles whose color matches the intensity
+of a song.  The second type of visualization shows moving rectangles
+whose shape and speed is determined by the songs numerical attributes.
 
 To run, you must have Spotipy installed. You can do this with:
 
@@ -24,3 +28,7 @@ You must also create your own client id and place it in a file called config.py
 so that the script can access spotify data. There is a template file named
 config_template.py which can be edited once you have your own Spotify web API
 client id and username.
+
+To run, you must also have pygame installed.  You can do this with:
+
+$ pip install -U pygame --user
