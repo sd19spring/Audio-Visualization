@@ -2,8 +2,6 @@ import spotipy
 import spotipy.util as util
 from config import *
 
-print(spotipy.VERSION)
-
 scope = 'user-read-currently-playing'
 
 token = util.prompt_for_user_token( username,
@@ -30,3 +28,4 @@ else:
 
 
 print(current_track_name)
+print(beats, bars)
