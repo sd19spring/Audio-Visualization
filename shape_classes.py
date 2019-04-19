@@ -2,6 +2,8 @@ import random
 
 import pygame, sys
 from pygame.locals import *
+from spotify_data import *
+from visualizer import *
 
 
 class Rectangle:
@@ -14,22 +16,38 @@ class Rectangle:
 		"""
 		self.x = x
 		self.y = y
+		#probably want to implement a little bit of random in the speeds and sizes
 		self.width = 2 * danceability
 		self.height = 3 * energy
+		#probably want to change color to thresholds
         self.color = [40*valence, 200*valence, 100*valence]
+		self.xspeed = danceability/10
+		self.yspeed = danceability/10
 
-    def draw(self):
+	def update(self):
+		"""
+		Every frame it will add the speed to the object to look like motion
+		"""
+		self.x += self.xspeed
+		self.y += self.yspeed
+
+		#defines direction of movement and how it leaves screen
+		if self.xspeed > 0 and (self.x + self.width) > screen['width']:
+			self.x = -self.width
+		elif self.xspeed < 0 and self.x < -self.width:
+			self.x = screen['width']
+
+		if self.yspeed > 0 and (self.y) > screen['height']:
+			self.y = -self.height
+		elif self.xspeed < 0 and (self.y + self.height) < -self.width:
+			self.x = screen['height']
+
+	def draw(self):
 		"""
 		Draws the rectangle on the screen
 		"""
-		pygame.draw.rect(screen['window'], self.color, Rect( [self.x, self.y], [self.w, self.h] ) )
+		pygame.draw.rect(screen['window'], self.color, Rect( [self.x, self.y], [self.width, self.height] ) )
 
-	def move(self, xdir, ydir):
-		"""
-		Movement based on the grid so that it moves exactly one "block" at once
-		"""
-		self.x += xdir * screen['grid']
-		self.y += ydir * screen['grid']
 
 class Circle:
     """
