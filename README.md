@@ -32,3 +32,13 @@ client id and username.
 To run, you must also have pygame installed.  You can do this with:
 
 $ pip install -U pygame --user
+
+Usage:
+*We have yet to determine how User's will interact with the code*
+*We are still trying to figure out in what order a User should start
+playing a song and then start running the code*
+
+License
+
+This project is licensed under the GNU APGLv3 license.
+For more details regarding this license, please see the LICENSE.md file
