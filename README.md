@@ -2,6 +2,7 @@
 # Audio-Visualization Utilizing Spotify Song Data
 Authors: Alex Scott, David Tarazi, Harrison Mintz
 
+Description:
 The purpose of this code is to create engaging visualizations that play
 alongside a User's Spotify music.  These visualizations utilize different
 numerical elements of a song, such as its tempo, intensity, and danceability,
@@ -11,6 +12,7 @@ visualization shows pulsing circles whose color matches the intensity
 of a song.  The second type of visualization shows moving rectangles
 whose shape and speed is determined by the songs numerical attributes.
 
+Getting Stared:
 To run, you must have Spotipy installed. You can do this with:
 
 $ pip install spotipy
@@ -38,7 +40,13 @@ Usage:
 *We are still trying to figure out in what order a User should start
 playing a song and then start running the code*
 
-License
-
+License:
 This project is licensed under the GNU APGLv3 license.
 For more details regarding this license, please see the LICENSE.md file
+
+Tip Jar:
+If you love our code SO much, are a big fan of our trippy music visualizations,
+or perhaps just want to help out some broke college students then it is your 
+lucky day because we accept tips!
+You can Venmo any of us at @HarrisonMintz and @David-Tarazi
+Gracias :)
