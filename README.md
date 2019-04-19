@@ -28,3 +28,6 @@ You must also create your own client id and place it in a file called config.py
 so that the script can access spotify data. There is a template file named
 config_template.py which can be edited once you have your own Spotify web API
 client id and username.
+
+To run, you must also have pygame installed.  You can do this with:
+$ pip install -U pygame --user
