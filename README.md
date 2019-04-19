@@ -54,4 +54,5 @@ If you love our code SO much, are a big fan of our trippy music visualizations,
 or perhaps just want to help out some broke college students then it is your 
 lucky day because we accept tips!
 You can Venmo any of us at @HarrisonMintz and @David-Tarazi
+
 Gracias :)
