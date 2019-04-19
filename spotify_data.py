@@ -21,11 +21,15 @@ if current_track_info['currently_playing_type'] == 'track':
     track_analysis = spotify.audio_analysis(current_track_id)
     beats = track_analysis['beats']
     bars = track_analysis['bars']
-    #sections contains things like loudness and tempo
-    sections = track_analysis['sections']
+    #finding features like danceability, mood, etc.
+    track_features = spotify.audio_features(current_track_id)
+    danceability = track_features[0]['danceability']
+    loudness = track_features[0]['loudness']
+    energy = track_features[0]['energy']
+    tempo = track_features[0]['tempo']
+    mood = track_features[0]['valence']
 else:
     raise Exception('The audio currently playing is not a track')
 
 
-print(current_track_name)
-print(beats, bars)
+#print(current_track_name)
