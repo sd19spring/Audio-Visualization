@@ -3,6 +3,7 @@
 Authors: Alex Scott, David Tarazi, Harrison Mintz
 
 Description:
+
 The purpose of this code is to create engaging visualizations that play
 alongside a User's Spotify music.  These visualizations utilize different
 numerical elements of a song, such as its tempo, intensity, and danceability,
@@ -13,6 +14,7 @@ of a song.  The second type of visualization shows moving rectangles
 whose shape and speed is determined by the songs numerical attributes.
 
 Getting Stared:
+
 To run, you must have Spotipy installed. You can do this with:
 
 $ pip install spotipy
@@ -36,15 +38,18 @@ To run, you must also have pygame installed.  You can do this with:
 $ pip install -U pygame --user
 
 Usage:
+
 *We have yet to determine how User's will interact with the code*
 *We are still trying to figure out in what order a User should start
 playing a song and then start running the code*
 
 License:
+
 This project is licensed under the GNU APGLv3 license.
 For more details regarding this license, please see the LICENSE.md file
 
 Tip Jar:
+
 If you love our code SO much, are a big fan of our trippy music visualizations,
 or perhaps just want to help out some broke college students then it is your 
 lucky day because we accept tips!
