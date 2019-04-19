@@ -1,7 +1,7 @@
 import random
-
 import pygame, sys
-from pygame.locals import *
+from pygame.locals import
+*
 from spotify_data import *
 from visualizer import *
 
@@ -24,23 +24,24 @@ class Rectangle:
 		self.xspeed = danceability/10
 		self.yspeed = danceability/10
 
-	def update(self):
+	def update(self, type = "floaty rectangle"):
 		"""
 		Every frame it will add the speed to the object to look like motion
 		"""
-		self.x += self.xspeed
-		self.y += self.yspeed
+		if type = "floaty rectangle"
+			self.x += self.xspeed
+			self.y += self.yspeed
 
-		#defines direction of movement and how it leaves screen
-		if self.xspeed > 0 and (self.x + self.width) > screen['width']:
-			self.x = -self.width
-		elif self.xspeed < 0 and self.x < -self.width:
-			self.x = screen['width']
+			#defines direction of movement and how it leaves screen
+			if self.xspeed > 0 and (self.x + self.width) > screen['width']:
+				self.x = -self.width
+			elif self.xspeed < 0 and self.x < -self.width:
+				self.x = screen['width']
 
-		if self.yspeed > 0 and (self.y) > screen['height']:
-			self.y = -self.height
-		elif self.xspeed < 0 and (self.y + self.height) < -self.width:
-			self.x = screen['height']
+			if self.yspeed > 0 and (self.y) > screen['height']:
+				self.y = -self.height
+			elif self.xspeed < 0 and (self.y + self.height) < -self.width:
+				self.x = screen['height']
 
 	def draw(self):
 		"""
