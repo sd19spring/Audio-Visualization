@@ -23,6 +23,7 @@ def collect_data():
 
         #see https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-analysis/
         track_analysis = spotify.audio_analysis(current_track_id)
+        duration = track_analysis['track']['duration']
         beats = track_analysis['beats']
         bars = track_analysis['bars']
         #finding features like danceability, mood, etc.
@@ -35,7 +36,7 @@ def collect_data():
     else:
         raise Exception('The audio currently playing is not a track')
 
-    return beats, bars, danceability, loudness, energy, tempo, mood
+    return beats, bars, danceability, loudness, energy, tempo, mood, duration
 
-beats, bars, danceability, loudness, energy, tempo, mood = collect_data()
-print(beats)
+#beats, bars, danceability, loudness, energy, tempo, mood, duration = collect_data()
+#print(beats)
