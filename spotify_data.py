@@ -19,10 +19,11 @@ def collect_data():
 
     #Checks whether a user is in fact listening to a song.  An exception is raised if they are not (i.e. listening to an ad instead)
     if current_track_info['currently_playing_type'] == 'track':
+        #The value in the next line is obtained by searching for the 'item' key within the current_track_info dictionary and then searching for the 'id' key within the 'item' dictionary
         current_track_id = current_track_info['item']['id']
         current_track_name = current_track_info['item']['name']
 
-        #see https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-analysis/
+        #See https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-analysis/ for more information about the type of data being collected
         track_analysis = spotify.audio_analysis(current_track_id)
         duration = track_analysis['track']['duration']
         beats = track_analysis['beats']
