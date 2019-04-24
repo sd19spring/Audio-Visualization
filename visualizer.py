@@ -24,7 +24,7 @@ BLACK = (0, 0, 0)
 class Display:
 	"""
 	The App class is where all the objects are created and the mechanics of the
-	game is run.
+	visualization is run.
 	"""
 	def __init__(self):
 		"""
@@ -46,7 +46,7 @@ class Display:
 		self.bar_count = 0
 		self.beat_count = 0
 
-		#list of colors based on mood info
+		#list of colors based on song mood info
 		self.colors = []
 		self.set_colors()
 
@@ -56,7 +56,8 @@ class Display:
 		self.ellapsed_time = 0
 		self.occurred = False
 		self.count = 0
-
+		
+		#Establish two different types of circles for the visualization: floaty and bubbles
 		self.styles = ("floaty", "bubbles")
 		self.style = "floaty"
 		self.style_count = 0
@@ -66,7 +67,7 @@ class Display:
 
 	def set_colors(self):
 		"""
-		Determines a color palette for the song based on the mood/valence
+		Determines a color palette for the song based on its mood/valence
 		"""
 		if data['mood'] < 0.25:
 		 	self.colors = [(227,252,245), (204,227,250), (234,211,248), (187,187,187)]
@@ -163,9 +164,10 @@ class Display:
 		"""
 		Displays all the objects on the window for each state
 		"""
-		#draw the shapes
+		#draw the screen background
 		screen['window'].fill(BLACK)
 
+		#draw the shapes
 		for shape in self.shapes:
 			shape.draw()
 
@@ -183,6 +185,7 @@ class Display:
 		"""
 		Executes and updates all the code
 		"""
+		#The while loop ensures the visualization only goes while the song is still playing
 		while self.ellapsed_time < self.end_time:
 			self.ellapsed_time = time.time() - self.start_time
 			#makes sure that the program hasn't reached a new beat
