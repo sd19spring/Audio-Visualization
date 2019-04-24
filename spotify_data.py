@@ -4,7 +4,7 @@ from config import *
 
 def collect_data():
     """
-    Collects all the data for your song
+    Collects data for song that is currently playing and adds it to a dictionary
     """
     scope = 'user-read-currently-playing'
 
@@ -17,6 +17,7 @@ def collect_data():
     sp = spotipy.Spotify(auth=token)
     current_track_info = sp.current_user_playing_track()
 
+    #Checks whether a user is in fact listening to a song.  An exception is raised if they are not (i.e. listening to an ad instead)
     if current_track_info['currently_playing_type'] == 'track':
         current_track_id = current_track_info['item']['id']
         current_track_name = current_track_info['item']['name']
