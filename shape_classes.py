@@ -8,7 +8,7 @@ from visualizer import *
 
 class Rectangle:
 	"""
-	Creates a rectangle class
+	Creates a rectangle shape class
 	"""
 	def __init__(self, x, y, danceability, energy, loudness, color):
 		"""
@@ -27,13 +27,13 @@ class Rectangle:
 
 	def update(self, type = "floaty"):
 		"""
-		Every frame it will add the speed to the object to look like motion
+		Every frame this method will add the speed to the object's coordinates to make the object move
 		"""
 		if type == "floaty":
 			self.x += self.xspeed
 			self.y += self.yspeed
 
-			#defines how it leaves screen
+			#Defines how a rectange leaves and re-enters the screen
 			if self.xspeed > 0 and (self.x + self.width) > screen['width']:
 				self.x = -self.width
 			elif self.xspeed < 0 and (self.x) < -self.width:
@@ -60,7 +60,7 @@ class Rectangle:
 
 class Circle:
     """
-	Creates a circle class to create instances
+	Creates a circle shape class
 	"""
     def __init__(self, x, y, danceability, energy, loudness, color):
         """
