@@ -21,8 +21,8 @@ class Rectangle:
 		self.height = int(random.randint(100, 200)*energy)
 
 		self.color = color
-		self.xspeed = danceability
-		self.yspeed = danceability
+		self.xspeed = danceability*2
+		self.yspeed = danceability*2
 		self.expand_speed = loudness/random.randint(20,40)
 
 	def update(self, type = "floaty"):
@@ -71,8 +71,8 @@ class Circle:
         self.radius = int((100*danceability) + random.randint(0,20))
         self.color = color
 
-        self.xspeed = danceability
-        self.yspeed = danceability
+        self.xspeed = danceability*2
+        self.yspeed = danceability*2
         self.expand_speed = loudness/random.randint(20,40)
 
     def update(self, type = "floaty"):
@@ -83,26 +83,28 @@ class Circle:
             self.x += self.xspeed
             self.y += self.yspeed
 
-#defines how it leaves screen
-        if self.xspeed > 0 and (self.x + self.radius) > screen['width']:
-	        self.x = -self.radius
-        elif self.xspeed < 0 and (self.x) < -self.radius:
-	        self.x = screen['width']
+			#defines how it leaves screen and reappears
+            if self.xspeed > 0 and (self.x + self.radius) > screen['width']:
+                self.x = -self.radius
+            elif self.xspeed < 0 and (self.x) < -self.radius:
+                self.x = screen['width']
 
-        if self.yspeed > 0 and (self.y + self.radius) > screen['height']:
-	        self.y = -self.radius
-        elif self.xspeed < 0 and (self.y) < -self.radius:
-	        self.x = screen['height']
+            if self.yspeed > 0 and (self.y + self.radius) > screen['height']:
+                self.y = -self.radius
+            elif self.xspeed < 0 and (self.y) < -self.radius:
+                self.x = screen['height']
 
         elif type == "bubbles":
             self.radius += self.expand_speed
 
+			#if the circle is too small reset its location and size
             if self.radius < 5:
                 self.move_to_random()
                 self.radius = 50
-            if self.radius > 250:
+			#if the circle is too big reset it
+            if self.radius > 200:
                 self.move_to_random()
-                self.radius = 50
+                self.radius = 100
 
     def move_to_random(self):
         """
