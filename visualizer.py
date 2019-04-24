@@ -30,10 +30,9 @@ class Display:
 		"""
 		Creates basic initialization for the variables, clock, etc.
 		"""
-
 		pygame.init()
 
-		self.numshapes = int(data['tempo']/20) + random.randint(0,5)
+		self.numshapes = int(data['tempo']/10) + random.randint(0,5)
 		self.beat_stamps = []
 		#adds the start time of all the beats to the beat_stamps list
 		for i in data['beats']:
@@ -134,6 +133,7 @@ class Display:
 		For the bubbles style, every 4 beats the shape might change expand to
 		shrink, and every 8 beats the shape will change location
 		"""
+		#use the count function so that it doesn't update every beat, every n beats
 		self.count += 1
 		if self.style == "floaty":
 			if self.count == 4:
@@ -151,7 +151,8 @@ class Display:
 						shape.expand_speed *= -1
 			if self.count == 8:
 				for shape in self.shapes:
-					shape.move_to_random()
+					if bool(random.getrandbits(1)):
+						shape.move_to_random()
 					self.count = 0
 
 		self.beat_count += 1
@@ -171,11 +172,17 @@ class Display:
 		pygame.display.flip()
 
 	def cleanup(self):
+		"""
+		Kills the display when it exits the loop and the song ends
+		"""
 		pygame.quit()
 		quit()
 
 	#EXECUTE ALL CODE AND INITIALIZE GAME
 	def execute(self):
+		"""
+		Executes and updates all the code
+		"""
 		while self.ellapsed_time < self.end_time:
 			self.ellapsed_time = time.time() - self.start_time
 			#makes sure that the program hasn't reached a new beat
