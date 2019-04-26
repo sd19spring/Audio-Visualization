@@ -32,7 +32,7 @@ class Display:
 		"""
 		pygame.init()
 
-		self.numshapes = int(data['tempo']/10) + random.randint(0,5)
+		self.numshapes = int(data['tempo']/7) + random.randint(2,5)
 		self.beat_stamps = []
 		#adds the start time of all the beats to the beat_stamps list
 		for i in data['beats']:
@@ -56,7 +56,7 @@ class Display:
 		self.ellapsed_time = 0
 		self.occurred = False
 		self.count = 0
-		
+
 		#Establish two different types of circles for the visualization: floaty and bubbles
 		self.styles = ("floaty", "bubbles")
 		self.style = "floaty"
@@ -114,7 +114,7 @@ class Display:
 		Updates the shapes and display style
 		'''
 		#updates the style and clears the shapes
-		if self.bar_count % 16 == 0:
+		if self.bar_count % 8 == 0:
 			self.shapes.clear()
 			self.style_count += 1
 			if self.style_count % 2 == 0:
