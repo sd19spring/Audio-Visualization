@@ -10,4 +10,7 @@ The purpose of this project is to create engaging visualizations that play along
 To learn more about the implementation of this code click [HERE](implementation.md)
 
 By David "Crazy Legs" Tarazi, Alex "The Boom" Scott, Harrison (David still brainstorming) Mintz
+
 [Insert headshots of each of us]
+
+[Insert LinkedIn profile URLs]
