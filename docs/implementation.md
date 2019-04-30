@@ -3,3 +3,5 @@ Below is the project's UML Diagram.  This diagram provides a high level architec
 *Prepare to have your mind BLOWN*
 
 ![UML_Diagram](https://github.com/sd19spring/Audio-Visualization/blob/master/docs/UML%20V1.jpg)
+
+Click [here](home_page.md) if you miss our amazing homepage
