@@ -2,7 +2,7 @@
 
 The title needs work... we are aware
 
-[Insert demo video here]
+[![Pic of Program Output](https://github.com/sd19spring/Audio-Visualization/blob/master/docs/Video_Demo_Pic.jpg)](https://www.youtube.com/watch?v=NWApJ23NRqQ)
 
 **Project Description**
 
