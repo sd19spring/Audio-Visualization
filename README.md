@@ -1,4 +1,3 @@
-# Audio-Visualization
 # Audio-Visualization Utilizing Spotify Song Data
 Authors: Alex Scott, David Tarazi, Harrison Mintz
 
