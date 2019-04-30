@@ -1,4 +1,4 @@
-# Visualapy
+# :fire: Visualapy :fire:
 
 The title needs work... we are aware
 
