@@ -16,4 +16,5 @@ By David "Crazy Legs" Tarazi, Alex "The Boom" Scott, Harrison (David still brain
 
 [Insert headshots of each of us]
 
-[Insert LinkedIn profile URLs]
+To learn more about our other professonial work, check out our LinkedIn pages that are listed below
+https://www.linkedin.com/in/harrisonmintz/
