@@ -1,2 +1,2 @@
 
-![UML_Diagram](UML V1.jpg)
+![UML_Diagram](/doc/UML V1.jpg)
