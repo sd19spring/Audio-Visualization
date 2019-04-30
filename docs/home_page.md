@@ -2,7 +2,7 @@
 
 The title needs work... we are aware
 
-Click on the image below check out our demo video!
+Click on the image below check out our demo video :stuck_out_tongue_winking_eye:
 [![Pic of Program Output](https://github.com/sd19spring/Audio-Visualization/blob/master/docs/Video_Demo_Pic.jpg)](https://www.youtube.com/watch?v=NWApJ23NRqQ)
 
 **Project Description**
