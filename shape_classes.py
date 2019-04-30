@@ -119,3 +119,23 @@ class Circle:
         Draws the circle on the screen
         """
         pygame.draw.circle(screen['window'], self.color, [int(self.x), int(self.y)], int(self.radius))
+
+"""
+class Style(numshapes):
+	"""
+	Creates a generic style class with shapes that can be applied to all other
+	styles.
+	"""
+
+class Floaty(Style):
+	"""
+	Creates a Floaty style that adds additional object parameters for this
+	specific style and contains an update function specific to the floaty style
+	"""
+
+class Bubbles(Style):
+	"""
+	Creates a Bubbles style that adds additional object parameters for this
+	specific style and contains an update function specific to the bubbles style
+	"""
+"""
