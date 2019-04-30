@@ -14,4 +14,4 @@ If you're thinking wow this is awesome but song should I listen to with it well 
 
 By David "Crazy Legs" Tarazi, Alex "The Boom" Scott, Harrison (David still brainstorming) Mintz
 
-To learn more about the three of us click[here](about_us.md)
+To learn more about the three of us click [here](about_us.md)
