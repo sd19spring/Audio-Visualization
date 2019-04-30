@@ -14,12 +14,4 @@ If you're thinking wow this is awesome but song should I listen to with it well 
 
 By David "Crazy Legs" Tarazi, Alex "The Boom" Scott, Harrison (David still brainstorming) Mintz
 
-[Insert headshots of each of us]
-
-To learn more about our other professonial work, check us out on LinkedIn
-
-Harrison: https://www.linkedin.com/in/harrisonmintz/
-
-Alex: https://www.linkedin.com/in/alexander-scott-87a276107/
-
-David: https://www.linkedin.com/in/david-tarazi-335437169/
+To learn more about the three of us click[here](about_us.md)
