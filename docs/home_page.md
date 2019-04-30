@@ -4,4 +4,8 @@ The title needs work... we are aware
 
 [Insert demo video here]
 
+**Project Description**
+
+The purpose of this project is to create engaging visualizations that play alongside a User's Spotify music. These visualizations utilize different numerical elements of a song, such as its tempo, intensity, and danceability, to ensure the vibe of the visualization matches the vibe of the song. The visualizations fall into two general categories. The first type of visualization shows pulsing circles whose color matches the intensity of a song. The second type of visualization shows moving rectangles whose shape and speed is determined by the songs numerical attributes.
+
 By David "Crazy Legs" Tarazi, Alex "The Boom" Scott, Harrison (David still brainstorming) Mintz
