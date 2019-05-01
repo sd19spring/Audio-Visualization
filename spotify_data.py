@@ -2,19 +2,36 @@ import spotipy
 import spotipy.util as util
 from config import *
 
+def setup_credentials():
+    """
+    sets up all the credentials needed for data and to pause/play and returns it
+    """
+    if 'sp' not in globals():
+        scopes = 'user-read-currently-playing user-modify-playback-state'
+        token = util.prompt_for_user_token( username,
+                                            scopes,
+                                            client_id = client_id,
+                                            client_secret = client_secret,
+                                            redirect_uri = redirect_uri)
+        sp = spotipy.Spotify(auth=token)
+    return sp
+
+
+def get_track_uri():
+    """
+    Returns the currently playing track's uri
+    """
+    sp = setup_credentials()
+    current_track_info = sp.current_user_playing_track()
+
+    return current_track_info['item']['uri']
+
+
 def collect_data():
     """
     Collects data for song that is currently playing and adds it to a dictionary
     """
-    scope = 'user-read-currently-playing'
-
-    token = util.prompt_for_user_token( username,
-                                        scope,
-                                        client_id = client_id,
-                                        client_secret = client_secret,
-                                        redirect_uri = redirect_uri)
-
-    sp = spotipy.Spotify(auth=token)
+    sp = setup_credentials()
     current_track_info = sp.current_user_playing_track()
 
     #Checks whether a user is in fact listening to a song.  An exception is raised if they are not (i.e. listening to an ad instead)
@@ -40,5 +57,21 @@ def collect_data():
 
     return beats, bars, danceability, loudness, energy, tempo, mood, duration
 
+    #to return the id for unpausing the song
+
+def unpause_song():
+    """
+    unpauses the currently playing song at the beginning
+    """
+    sp = setup_credentials()
+    uri = get_track_uri()
+    sp.start_playback(uris = [uri])
+
+def pause_song():
+    """
+    pauses the currently playing song
+    """
+    sp = setup_credentials()
+    sp.pause_playback()
 #beats, bars, danceability, loudness, energy, tempo, mood, duration = collect_data()
 #print(beats)

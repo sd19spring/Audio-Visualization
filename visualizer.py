@@ -9,15 +9,19 @@ from pygame.locals import *
 from shape_classes import *
 from spotify_data import *
 
+#pauses the song
+pause_song()
+
+#collects data about the current song
 data = {}
 data['beats'], data['bars'], data['danceability'], data['loudness'], data['energy'], data['tempo'], data['mood'], data['duration'] = collect_data()
 
+#sets up the PyGame screen
 screen = {}
 screen['width'] = 1920
 screen['height'] = 1080
-screen['fps'] = 90
+screen['fps'] = 120
 screen['window'] = pygame.display.set_mode( [screen['width'], screen['height']], pygame.HWSURFACE)
-WHITE = (255,255,255)
 BLACK = (0, 0, 0)
 
 
@@ -51,8 +55,7 @@ class Display:
 		self.set_colors()
 
 		self.clock = pygame.time.Clock()
-		self.start_time = time.time()
-		self.end_time = self.start_time + data['duration']
+		self.end_time = data['duration']
 		self.ellapsed_time = 0
 		self.occurred = False
 		self.count = 0
@@ -70,13 +73,13 @@ class Display:
 		Determines a color palette for the song based on its mood/valence
 		"""
 		if data['mood'] < 0.25:
-		 	self.colors = [(227,252,245), (204,227,250), (234,211,248), (187,187,187)]
+		 	self.colors = [(1,31,75), (3,57,108), (0,91,150), (100,151,177), (179,205,224)]
 		elif data['mood'] >= 0.25 and data['mood'] < 0.5:
-		 	self.colors = [(255,155,155), (251,195,176), (236,201,201), (173,216,230)]
+		 	self.colors = [(255,171,222), (219,175,255), (175,208,255), (170,255,248), (255,255,176)]
 		elif data['mood'] >= 0.5 and data['mood'] < 0.75:
-		 	self.colors = [(184,77,212), (59,150,253), (67,197,155), (249,143,107)]
+		 	self.colors = [(255,154,85), (255,234,108), (84,255,251), (137,255,204), (231,178,255)]
 		else:
-			self.colors = [(236,202,0), (236,155,0), (236,83,0), (249,242,0)]
+			self.colors = [(236,202,0), (236,155,0), (236,83,0), (249,242,0), (113,199,236)]
 
 	def fill_shapes(self):
 		"""
@@ -165,7 +168,7 @@ class Display:
 		Displays all the objects on the window for each state
 		"""
 		#draw the screen background
-		screen['window'].fill(BLACK)
+		screen['window'].fill(self.colors[-1])
 
 		#draw the shapes
 		for shape in self.shapes:
@@ -185,6 +188,9 @@ class Display:
 		"""
 		Executes and updates all the code
 		"""
+		#unpauses the song right before the first update
+		self.start_time = time.time()
+		unpause_song()
 		#The while loop ensures the visualization only goes while the song is still playing
 		while self.ellapsed_time < self.end_time:
 			self.ellapsed_time = time.time() - self.start_time
