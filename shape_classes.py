@@ -87,43 +87,43 @@ class Circle:
 		based on which style type is being implemented
 		"""
         if type == "floaty":
-			self.update_floaty()
+            self.update_floaty()
 
         elif type == "bubbles":
             self.update_bubbles()
 
-	def update_floaty(self):
-		"""
-		Updates the screen with the floaty style
-		"""
-		self.x += self.xspeed
-		self.y += self.yspeed
+    def update_floaty(self):
+        """
+        Updates the screen with the floaty style
+        """
+        self.x += self.xspeed
+        self.y += self.yspeed
 
 		#defines how it leaves screen and reappears
-		if self.xspeed > 0 and (self.x + self.radius) > screen['width']:
-			self.x = -self.radius
-		elif self.xspeed < 0 and (self.x) < -self.radius:
-			self.x = screen['width']
+        if self.xspeed > 0 and (self.x + self.radius) > screen['width']:
+            self.x = -self.radius
+        elif self.xspeed < 0 and (self.x) < -self.radius:
+            self.x = screen['width']
 
-		if self.yspeed > 0 and (self.y + self.radius) > screen['height']:
-			self.y = -self.radius
-		elif self.xspeed < 0 and (self.y) < -self.radius:
-			self.x = screen['height']
+        if self.yspeed > 0 and (self.y + self.radius) > screen['height']:
+            self.y = -self.radius
+        elif self.xspeed < 0 and (self.y) < -self.radius:
+            self.x = screen['height']
 
-	def update_bubbles(self):
-		"""
-		Updates the screen with the bubbles style
-		"""
-		self.radius += self.expand_speed
+    def update_bubbles(self):
+        """
+        Updates the screen with the bubbles style
+        """
+        self.radius += self.expand_speed
 
 		#if the circle is too small reset its location and size
-		if self.radius < 5:
-			self.move_to_random()
-			self.radius = 50
+        if self.radius < 5:
+            self.move_to_random()
+            self.radius = 50
 		#if the circle is too big reset it
-		if self.radius > 200:
-			self.move_to_random()
-			self.radius = 100
+        if self.radius > 200:
+            self.move_to_random()
+            self.radius = 100
 
     def move_to_random(self):
         """
