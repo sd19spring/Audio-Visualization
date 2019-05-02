@@ -1,6 +1,6 @@
 [Insert headshots of each of us]
 
-<img src="https://github.com/sd19spring/Audio-Visualization/blob/master/docs/IMG-3518.JPG" width="238" height="353" /> <img src="https://github.com/sd19spring/Audio-Visualization/blob/master/docs/David_headshot.JPG" width="345" height="353" /> <img src="https://github.com/sd19spring/Audio-Visualization/blob/master/docs/Alex_headshot.JPG" width="300" height="353" />
+<img src="https://github.com/sd19spring/Audio-Visualization/blob/master/docs/IMG-3518.JPG" width="238" height="353" /> <img src="https://github.com/sd19spring/Audio-Visualization/blob/master/docs/David_headshot.JPG" width="330" height="353" /> <img src="https://github.com/sd19spring/Audio-Visualization/blob/master/docs/Alex_headshot.JPG" width="300" height="353" />
 
 To learn more about our other professonial work, check us out on LinkedIn
 
