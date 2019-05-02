@@ -5,8 +5,7 @@
 From left to right: Harrison, David, and Alex
 
 To learn more about our other professonial work, check us out on LinkedIn:
-
-
+<br/><br/>
 Harrison: https://www.linkedin.com/in/harrisonmintz/
 
 Alex: https://www.linkedin.com/in/alexander-scott-87a276107/
@@ -14,4 +13,4 @@ Alex: https://www.linkedin.com/in/alexander-scott-87a276107/
 David: https://www.linkedin.com/in/david-tarazi-335437169/
 
 
-We are more than just professionals though! To learn more about what we do when we're not building mind-blowing Python programs, keep reading.
+We are more than just professionals though! Read on to learn more about what we do when we're not building mind-blowing Python programs.
