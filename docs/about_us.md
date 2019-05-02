@@ -1,6 +1,6 @@
 [Insert headshots of each of us]
 
-![David](https://github.com/sd19spring/Audio-Visualization/blob/master/docs/David_headshot.JPG) ![Harrison](https://github.com/sd19spring/Audio-Visualization/blob/master/docs/IMG-3518.JPG) ![Alex](https://github.com/sd19spring/Audio-Visualization/blob/master/docs/Alex_headshot.JPG)
+![David](https://github.com/sd19spring/Audio-Visualization/blob/master/docs/David_headshot.JPG) ![Harrison](https://github.com/sd19spring/Audio-Visualization/blob/master/docs/IMG-3518.JPG =474.6x706.2) ![Alex](https://github.com/sd19spring/Audio-Visualization/blob/master/docs/Alex_headshot.JPG)
 
 To learn more about our other professonial work, check us out on LinkedIn
 
