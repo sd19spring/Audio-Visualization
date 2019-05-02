@@ -4,7 +4,8 @@
 
 From left to right: Harrison, David, and Alex
 
-To learn more about our other professonial work, check us out on LinkedIn
+To learn more about our other professonial work, check us out on LinkedIn:
+
 
 Harrison: https://www.linkedin.com/in/harrisonmintz/
 
