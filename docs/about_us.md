@@ -14,7 +14,7 @@ David: https://www.linkedin.com/in/david-tarazi-335437169/ <br/><br/>
 
 We are more than just professionals though! Read on to learn more about what we do when we're not building mind-blowing Python programs.
 
-David: You can typically catch David at the gym, saying his catch phrase "every day is leg day" to anyone who passes him by.  When he's not busy lunging and squatting, David likes to kick back with a glass of red wine and binge watch reruns of *Keeping Up with the Kardashians* (He's on Team Khloe in case you were curious)
+David: You can typically catch David at the gym, saying his catch phrase "every day is leg day" to anyone who passes him by.  When he's not busy lunging and squatting, David likes to kick back with a glass of red wine and binge watch reruns of *Keeping Up with the Kardashians* (He's on Team Khloe in case you were curious).
 
 Alex: An aviation enthusiast, Alex is usually busy kicking ass at plane building competitions or running around with his arms stretched out yelling "vrooooooom" :airplane:.  As a soon-to-be college grad, Alex is looking forward to entering the real world and becoming "the next Orville Wright with a splash of Amelia Earhart."
 
