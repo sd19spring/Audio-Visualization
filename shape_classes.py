@@ -32,6 +32,9 @@ class Rectangle:
 		if type == "floaty":
 			self.update_floaty()
 
+		elif type == "fly":
+			self.update_fly()
+
 	def update_floaty(self):
 		"""
 		Updates the screen with the floaty style
@@ -47,8 +50,22 @@ class Rectangle:
 
 		if self.yspeed > 0 and (self.y + self.height) > screen['height']:
 			self.y = -self.height
-		elif self.xspeed < 0 and (self.y) < -self.width:
-			self.x = screen['height']
+		elif self.yspeed < 0 and (self.y) < -self.width:
+			self.y = screen['height']
+
+	def update_fly(self):
+		"""
+		Updates the screen with the "fly-by" style
+		"""
+		self.xspeed = self.xspeed * 1.0025
+		self.yspeed = self.yspeed * 0.999
+		self.x += self.xspeed
+		self.y += self.yspeed
+
+		#Defines how a rectange leaves and re-enters the screen
+		if self.xspeed > 0 and (self.x + self.width) > screen['width']:
+			self.x = -self.width
+
 
 	def move_to_random(self):
 		"""
@@ -92,6 +109,12 @@ class Circle:
         elif type == "bubbles":
             self.update_bubbles()
 
+        elif type == "fly":
+            self.update_fly()
+
+        elif type == "popcorn":
+            self.update_popcorn()
+
     def update_floaty(self):
         """
         Updates the screen with the floaty style
@@ -119,11 +142,31 @@ class Circle:
 		#if the circle is too small reset its location and size
         if self.radius < 5:
             self.move_to_random()
-            self.radius = 50
+            self.radius = 100
 		#if the circle is too big reset it
         if self.radius > 200:
             self.move_to_random()
             self.radius = 100
+
+    def update_fly(self):
+        """
+		Updates the screen with the "fly-by" style
+		"""
+        self.xspeed = self.xspeed * 1.0025
+        self.yspeed = self.yspeed * 0.999
+        self.x += self.xspeed
+        self.y += self.yspeed
+
+		#Defines how a rectange leaves and re-enters the screen
+        if self.xspeed > 0 and (self.x + self.radius) > screen['width']:
+            self.x = -self.radius
+
+    def update_popcorn(self):
+        """
+		Updates the popcorn style
+		"""
+        self.y += -7*self.yspeed
+        self.x += self.xspeed
 
     def move_to_random(self):
         """
