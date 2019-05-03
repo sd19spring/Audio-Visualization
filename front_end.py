@@ -1,5 +1,8 @@
 from tkinter import *
-#from spotify_data.py import *
+from spotify_data import *
+from visualizer import *
+from shape_classes import *
+
 color = 'SlateGray2' #sets the background color for everything to use
 
 #create tkinter master window
@@ -36,11 +39,14 @@ artistentry.pack( expand = 'true', side = LEFT)
 
 #function that button calls
 def execute():
+    """
+    Executes the visualizer when the button is pressed
+    """
     songtitle = songentry.get()
     artistname = artistentry.get()
     print(songtitle)
     print(artistname)
-    return
+    
 
 
 #Define frame for use by button

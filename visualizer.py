@@ -9,22 +9,6 @@ from pygame.locals import *
 from shape_classes import *
 from spotify_data import *
 
-#pauses the song
-pause_song()
-
-#collects data about the current song
-data = {}
-data['beats'], data['bars'], data['danceability'], data['loudness'], data['energy'], data['tempo'], data['mood'], data['duration'] = collect_data()
-
-#sets up the PyGame screen
-screen = {}
-screen['width'] = 1920
-screen['height'] = 1080
-screen['fps'] = 120
-screen['window'] = pygame.display.set_mode( [screen['width'], screen['height']], pygame.HWSURFACE)
-BLACK = (0, 0, 0)
-
-
 class Display:
 	"""
 	The App class is where all the objects are created and the mechanics of the
@@ -240,6 +224,16 @@ class Display:
 			self.clock.tick(screen['fps'])
 		self.cleanup()
 
-if __name__ == "__main__":
+def run_visualizer(data):
+	#pauses the song
+	pause_song()
+	
+	#sets up the PyGame screen
+	screen = {}
+	screen['width'] = 1920
+	screen['height'] = 1080
+	screen['fps'] = 120
+	screen['window'] = pygame.display.set_mode( [screen['width'], screen['height']], pygame.HWSURFACE)
+
 	disp = Display()
 	disp.execute()
