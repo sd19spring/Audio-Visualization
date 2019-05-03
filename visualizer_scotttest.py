@@ -22,19 +22,6 @@ BLACK = (0, 0, 0)
 #--------------------------------------------------------------------
 #Begin active audio monitoring section
 
-import sys, os, time
-from Queue import Queue
-fromt ctypes import POINTER, c_ubyte, c_void_p, c_ulong, cast
-import numpy as np
-import matplotlib.pyplot as plt
-import scipy as sp
-import math
-from pulseaudio.lib_pulseaudio import *
-
-meter_rate = 44100/8 #Let's python process 44100Hz Audio signals
-max_sample_value = 2
-max_spaces = max_sample_value >> display_scale
-
 #---------------------------------------------------------------------
 #End Audio Monitoring section
 
