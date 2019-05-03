@@ -1,7 +1,7 @@
 # Audio-Visualization Utilizing Spotify Song Data
 Authors: Alex Scott, David Tarazi, Harrison Mintz
 
-Description:
+### Description:
 
 The purpose of this code is to create engaging visualizations that play
 alongside a User's Spotify music.  These visualizations utilize different
@@ -12,7 +12,7 @@ visualization shows pulsing circles whose color matches the intensity
 of a song.  The second type of visualization shows moving rectangles
 whose shape and speed is determined by the songs numerical attributes.
 
-Getting Stared:
+### Getting Stared:
 
 To run, you must have Spotipy installed. You can do this with:
 
@@ -36,22 +36,25 @@ To run, you must also have pygame installed.  You can do this with:
 
 $ pip install -U pygame --user
 
-Usage:
+### Usage:
+Once you have done the setup, you can begin playing a Spotify song on any player 
+and in the terminal from the repository folder, you can run the script with:
 
-*We have yet to determine how User's will interact with the code*
-*We are still trying to figure out in what order a User should start
-playing a song and then start running the code*
+$ python visualizer.py
 
-License:
+You don't need to pass any arguments; the program reads the song you are currently 
+listening to and restarts it to synchronize the visual and audio.
+
+### License:
 
 This project is licensed under the GNU APGLv3 license.
 For more details regarding this license, please see the LICENSE.md file
 
-Tip Jar:
+### Tip Jar:
 
 If you love our code SO much, are a big fan of our trippy music visualizations,
 or perhaps just want to help out some broke college students then it is your 
 lucky day because we accept tips!
 You can Venmo any of us at @HarrisonMintz and @David-Tarazi
 
-Gracias :)
+Thank you :)
