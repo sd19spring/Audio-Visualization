@@ -1,8 +1,8 @@
 **Recommended by David:**
 
-* 20 Mins by Lil Uzi Vert
+* Sanguine Paradise by Lil Uzi Vert
 
-* 3065 by Childish Gambino
+* Retro (Rough) by Childish Gambino
 
 * Truth Hurts by Lizzo
 
@@ -16,4 +16,8 @@
 
 **Recommended by Alex:**
 
-*Alex is still coming up with his recs*
+* Sunflower - Spider-Man: Into the Spider-Verse by Post Malone, Swae Lee
+
+* Rocket Girl by Lemaitre (feat. Betty Who)
+
+* Instant Crush by Daft Punk (feat. Julian Casablancas) 
