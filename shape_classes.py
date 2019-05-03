@@ -144,7 +144,7 @@ class Circle:
             self.move_to_random()
             self.radius = 100
 		#if the circle is too big reset it
-        if self.radius > 200:
+        if self.radius > 175:
             self.move_to_random()
             self.radius = 100
 
