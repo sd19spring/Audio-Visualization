@@ -4,4 +4,6 @@ Below is the project's UML Diagram.  This diagram provides a high level architec
 
 ![UML_Diagram](https://github.com/sd19spring/Audio-Visualization/blob/master/docs/UML%20V1.jpg)
 
+The visualizations are populated by two different classes of shapes: Rectangle and Circle
+
 Click [here](home_page.md) if you miss our amazing homepage
