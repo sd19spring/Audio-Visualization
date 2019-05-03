@@ -5,7 +5,11 @@ Below is the project's UML Diagram.  This diagram provides a high level architec
 ![UML_Diagram](https://github.com/sd19spring/Audio-Visualization/blob/master/docs/UML%20V1.jpg)
 
 The visualizations are populated by two different classes of shapes: Rectangle and Circle.  
+
 For Rectangles, their width and heights are determined by the energy of the song being played.  High energy songs lead to the creation of bigger shapes and vice versa with low energy songs.  Similarly, the speed at which a Rectangle moves is determined by how danceable a song is deemed by Spotify.  The more danceable a song the faster it moves.  Circle's sizes (i.e. their radii) are determined by bow danceable the song playing is as is their movement speed.  The rate at which a Circle expands is determined by how loud a song is (the louder a song the faster the circle expands).
-Each class has multiple methods to determine how the shapes moves throughout the visualization.
+
+Each class has multiple methods to determine how the shapes moves throughout the visualization.  To ensure the shapes do not simply disappear from the frame, each class has a method that says if a shapes x or y coordinates exceed that of the screen then the coordinates should be reset.
+
+
 
 Click [here](home_page.md) if you miss our amazing homepage
