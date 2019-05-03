@@ -11,6 +11,6 @@ To learn more about the implementation of this code click [HERE](implementation.
 
 If you're thinking wow this is awesome but song should I listen to with it well worry naught!  Click [here](song_recs.md) for a list of recommended songs to use with our code
 
-By David "Crazy Legs" Tarazi, Alex "The Boom" Scott, Harrison (David still brainstorming) Mintz
+By David "Crazy Legs" Tarazi, Alex "The Boom" Scott, Harrison Mintz (David is still brainstorming a nickname for H)
 
 To learn more about the three of us click [here](about_us.md)
