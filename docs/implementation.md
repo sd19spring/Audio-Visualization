@@ -10,6 +10,4 @@ For Rectangles, their width and heights are determined by the energy of the song
 
 Each class has multiple methods to determine how the shapes moves throughout the visualization.  To ensure the shapes do not simply disappear from the frame, each class has a method that says if a shapes x or y coordinates exceed that of the screen then the coordinates should be reset.
 
-
-
-Click [here](home_page.md) if you miss our amazing homepage
+Click [here](index.md) if you miss our amazing homepage
