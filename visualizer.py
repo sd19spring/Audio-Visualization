@@ -9,26 +9,69 @@ from pygame.locals import *
 from shape_classes import *
 from spotify_data import *
 
+
+class Data:
+	def __init__(self, name=None, artist=None):
+		self.data = {}
+		self.get_data(name, artist)
+
+	def get_data(self, name, artist):
+		"""
+		Collects song data from Spotify
+		"""
+		if name is None:
+			#pauses the song
+			pause_song()
+
+			#collects data about the current song
+			self.data['beats'], self.data['bars'], self.data['danceability'], self.data['loudness'], self.data['energy'], self.data['tempo'], self.data['mood'], self.data['duration'] = collect_data()
+			self.data['uri'] = None
+
+		else:
+			id, uri = get_track_id(name, artist)
+			self.data['uri'] = uri
+			self.data['beats'], self.data['bars'], self.data['danceability'], self.data['loudness'], self.data['energy'], self.data['tempo'], self.data['mood'], self.data['duration'] = collect_data(id)
+
+class Screen:
+	"""
+	Creates a screen object for pygame to use
+	"""
+	def __init__(self):
+		self.screen = {}
+		self.set_screen()
+
+	def set_screen(self):
+		"""
+		Sets the parameters of the pygame screen
+		"""
+		self.screen['width'] = 1920
+		self.screen['height'] = 1080
+		self.screen['fps'] = 120
+		self.screen['window'] = pygame.display.set_mode( [self.screen['width'], self.screen['height']], pygame.HWSURFACE)
+
+
 class Display:
 	"""
 	The App class is where all the objects are created and the mechanics of the
 	visualization is run.
 	"""
-	def __init__(self):
+	def __init__(self, song_data, screen_info):
 		"""
 		Creates basic initialization for the variables, clock, etc.
 		"""
 		pygame.init()
 
-		self.numshapes = int(data['tempo']/7) + random.randint(2,5)
+		self.data = song_data.data
+		self.screen = screen_info.screen
+		self.numshapes = int(self.data['tempo']/7) + random.randint(2,5)
 		self.beat_stamps = []
 		#adds the start time of all the beats to the beat_stamps list
-		for i in data['beats']:
+		for i in self.data['beats']:
 			self.beat_stamps.append(i['start'])
 
 		self.bar_stamps = [] #list of bar timestamps
 		#adds the start time of all the beats to the beat_stamps list
-		for i in data['bars']:
+		for i in self.data['bars']:
 			self.bar_stamps.append(i['start'])
 
 		self.bar_count = 0
@@ -39,8 +82,8 @@ class Display:
 		self.set_colors()
 
 		self.clock = pygame.time.Clock()
-		self.end_time = data['duration']
-		self.ellapsed_time = 0
+		self.end_time = self.data['duration']
+		self.elapsed_time = 0
 		self.occurred = False
 		self.count = 1
 
@@ -56,11 +99,11 @@ class Display:
 		"""
 		Determines a color palette for the song based on its mood/valence
 		"""
-		if data['mood'] < 0.25:
+		if self.data['mood'] < 0.25:
 		 	self.colors = [(1,31,75), (3,57,108), (0,91,150), (100,151,177), (179,205,224)]
-		elif data['mood'] >= 0.25 and data['mood'] < 0.5:
+		elif self.data['mood'] >= 0.25 and self.data['mood'] < 0.5:
 		 	self.colors = [(206,0,0), (133,46,182), (165,26,26), (51,33,169), (9,6,94)]
-		elif data['mood'] >= 0.5 and data['mood'] < 0.75:
+		elif self.data['mood'] >= 0.5 and self.data['mood'] < 0.75:
 		 	self.colors = [(255,158,158), (115,246,144), (93,216,126), (49,171,113), (255,98,98)]
 		else:
 			self.colors = [(236,202,0), (236,155,0), (236,83,0), (249,242,0), (113,199,236)]
@@ -73,37 +116,41 @@ class Display:
 		if self.style == "floaty" or self.style == "fly":
 			for i in range(self.numshapes):
 				if bool(random.getrandbits(1)):
-					self.shapes.append(Circle(	random.randint(10,screen['width']-10),
-												random.randint(10,screen['height']-10),
-												data['danceability'],
-												data['energy'],
-												data['loudness'],
-												self.colors[random.randint(0,3)]))
+					self.shapes.append(Circle(	random.randint(10,self.screen['width']-10),
+												random.randint(10,self.screen['height']-10),
+												self.data['danceability'],
+												self.data['energy'],
+												self.data['loudness'],
+												self.colors[random.randint(0,3)],
+												self.screen))
 				else:
-					self.shapes.append(Rectangle(	random.randint(10,screen['width']-10),
-													random.randint(10,screen['height']-10),
-													data['danceability'],
-													data['energy'],
-													data['loudness'],
-													self.colors[random.randint(0,3)]))
+					self.shapes.append(Rectangle(	random.randint(10,self.screen['width']-10),
+													random.randint(10,self.screen['height']-10),
+													self.data['danceability'],
+													self.data['energy'],
+													self.data['loudness'],
+													self.colors[random.randint(0,3)],
+													self.screen))
 
 		elif self.style == "bubbles":
 			for i in range(self.numshapes):
-				self.shapes.append(Circle(	random.randint(10,screen['width']-10),
-											random.randint(10,screen['height']-10),
-											data['danceability'],
-											data['energy'],
-											data['loudness'],
-											self.colors[random.randint(0,3)]))
+				self.shapes.append(Circle(	random.randint(10,self.screen['width']-10),
+											random.randint(10,self.screen['height']-10),
+											self.data['danceability'],
+											self.data['energy'],
+											self.data['loudness'],
+											self.colors[random.randint(0,3)],
+											self.screen))
 
 		else:
 			for i in range(int(self.numshapes/2)):
-				self.shapes.append(Circle(	random.randint(10,screen['width']-10),
-											random.randint(10,screen['height']-10),
-											data['danceability'],
-											data['energy'],
-											data['loudness'],
-											self.colors[random.randint(0,3)]))
+				self.shapes.append(Circle(	random.randint(10,self.screen['width']-10),
+											random.randint(10,self.screen['height']-10),
+											self.data['danceability'],
+											self.data['energy'],
+											self.data['loudness'],
+											self.colors[random.randint(0,3)],
+											self.screen))
 
 	def update(self):
 		'''
@@ -167,12 +214,13 @@ class Display:
 
 		if self.style == "popcorn":
 			if len(self.shapes) < self.numshapes:
-				self.shapes.append(Circle(	random.randint(10,screen['width']-10),
-											random.randint(10,screen['height']-10),
-											data['danceability'],
-											data['energy'],
-											data['loudness'],
-											self.colors[random.randint(0,3)]))
+				self.shapes.append(Circle(	random.randint(10,self.screen['width']-10),
+											random.randint(10,self.screen['height']-10),
+											self.data['danceability'],
+											self.data['energy'],
+											self.data['loudness'],
+											self.colors[random.randint(0,3)],
+											self.screen))
 			for shape in self.shapes:
 				if bool(random.getrandbits(1)):
 					shape.xspeed = -shape.xspeed
@@ -187,7 +235,7 @@ class Display:
 		Displays all the objects on the window for each state
 		"""
 		#draw the screen background
-		screen['window'].fill(self.colors[-1])
+		self.screen['window'].fill(self.colors[-1])
 
 		#draw the shapes
 		for shape in self.shapes:
@@ -200,7 +248,6 @@ class Display:
 		Kills the display when it exits the loop and the song ends
 		"""
 		pygame.quit()
-		quit()
 
 	#EXECUTE ALL CODE AND INITIALIZE GAME
 	def execute(self):
@@ -209,31 +256,37 @@ class Display:
 		"""
 		#unpauses the song right before the first update
 		self.start_time = time.time()
-		unpause_song()
+		unpause_song(self.data['uri'])
 		#The while loop ensures the visualization only goes while the song is still playing
-		while self.ellapsed_time < self.end_time:
-			self.ellapsed_time = time.time() - self.start_time
+		while self.elapsed_time < self.end_time:
+			self.elapsed_time = time.time() - self.start_time
 			#makes sure that the program hasn't reached a new beat
-			if self.occurred == True and self.ellapsed_time > (self.beat_stamps[self.beat_count+1] - self.beat_stamps[0]):
+			if self.occurred == True and self.elapsed_time > (self.beat_stamps[self.beat_count+1] - self.beat_stamps[0]):
 				self.occurred = False
-			if self.ellapsed_time > self.beat_stamps[self.beat_count] and self.occurred == False:
+			if self.elapsed_time > self.beat_stamps[self.beat_count] and self.occurred == False:
 				self.update_beats()
 				self.occurred = True
 			self.update()
 			self.draw()
-			self.clock.tick(screen['fps'])
+			#enables escape key to quit the visualizer
+			for event in pygame.event.get():
+				if event.type == QUIT:
+					return
+				elif event.type == KEYDOWN:
+					if event.key == K_ESCAPE:
+						self.cleanup()
+						return
+			self.clock.tick(self.screen['fps'])
 		self.cleanup()
 
-def run_visualizer(data):
-	#pauses the song
-	pause_song()
-	
-	#sets up the PyGame screen
-	screen = {}
-	screen['width'] = 1920
-	screen['height'] = 1080
-	screen['fps'] = 120
-	screen['window'] = pygame.display.set_mode( [screen['width'], screen['height']], pygame.HWSURFACE)
 
-	disp = Display()
+
+def run_visualizer(name = None, artist = None):
+	"""
+	Collects data and runs the visualizer depending on the input
+	"""
+	data = Data(name, artist)
+	screen = Screen()
+
+	disp = Display(data, screen)
 	disp.execute()

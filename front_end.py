@@ -3,6 +3,19 @@ from spotify_data import *
 from visualizer import *
 from shape_classes import *
 
+#function that button calls
+def execute():
+    """
+    Executes the visualizer when the button is pressed
+    """
+    songtitle = songentry.get()
+    artistname = artistentry.get()
+    if not songtitle:
+        run_visualizer()
+    else:
+        run_visualizer(songtitle, artistname)
+
+
 color = 'SlateGray2' #sets the background color for everything to use
 
 #create tkinter master window
@@ -37,31 +50,30 @@ bylabel.pack(padx = 0, side = LEFT)
 artistentry = Entry(infoframe) #creates a text entry widget for artist name
 artistentry.pack( expand = 'true', side = LEFT)
 
-#function that button calls
-def execute():
-    """
-    Executes the visualizer when the button is pressed
-    """
-    songtitle = songentry.get()
-    artistname = artistentry.get()
-    print(songtitle)
-    print(artistname)
-    
-
-
 #Define frame for use by button
-interactiveframe = Frame(window, bg = color)
-interactiveframe.pack(expand = 'true', fill = 'both', side = TOP)
-playbtn = Button(interactiveframe, text = "play", command = execute)
+play_frame = Frame(window, bg = color)
+play_frame.pack(expand = 'true', fill = 'both', side = TOP)
+playbtn = Button(play_frame, text = "play", command = execute)
 playbtn.pack(expand = 'true', side = TOP)
-exitinstructions = Label(interactiveframe, bg = color, text = "press ctrl+c to cancel the visualization at any time")
 
+"""
+I think we need multiprocessing to allow this to work
+
+stop_frame = Frame(window, bg = color)
+stop_frame.pack(expand = 'true', fill = 'both', side = TOP)
+stopbtn = Button(stop_frame, text = "stop", command = kill)
+stopbtn.pack(expand = 'true', side = TOP)
+
+kill function would quit pygame
+"""
+
+exitinstructions = Label(play_frame, bg = color, text = "press the escape key to quit at any time")
 exitinstructions.pack(expand = 'true', fill = 'both', side = TOP)
 
+# make the top right close button minimize (iconify) the main window
+window.protocol("WM_DELETE_WINDOW", window.iconify)
 
-
-
-
-
+# make Esc exit the program
+window.bind('<Escape>', lambda e: window.destroy())
 
 window.mainloop()
