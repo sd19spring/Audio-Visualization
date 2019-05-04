@@ -14,18 +14,13 @@ whose shape and speed is determined by the songs numerical attributes.
 
 ### Getting Stared:
 
-To run, you must have Spotipy installed. You can do this with:
+To run, you must have Spotipy installed. You can do this with pip3:
 
-$ pip install spotipy
+$ pip3 install spotipy
 
-However, the pip install does not create the correct version and despite our
-efforts to find a way to install the correct version it was easier to find the
-file location of the spotipy install and replace the file, client.py, in that
-install location with the client.py file in this repo. You can find where
-install location with the client.py file in this repository. You can find where
-spotipy is installed with:
+To install pip3, you can run:
 
-$ pip show spotipy
+$  sudo apt install python3-pip
 
 You must also create your own client id and place it in a file called config.py
 so that the script can access spotify data. There is a template file named
@@ -40,10 +35,10 @@ $ pip install -U pygame --user
 Once you have done the setup, you can begin playing a Spotify song on any player 
 and in the terminal from the repository folder, you can run the script with:
 
-$ python visualizer.py
+$ python vizify.py
 
-You don't need to pass any arguments; the program reads the song you are currently 
-listening to and restarts it to synchronize the visual and audio.
+You don't need to pass any arguments; this will pull up a GUI explaining how to
+interact with the software.
 
 ### License:
 
