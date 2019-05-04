@@ -56,16 +56,17 @@ def collect_data(current_track_id = None):
     tempo = track_features[0]['tempo']
     mood = track_features[0]['valence']
 
-    return beats, bars, danceability, loudness, energy, tempo, mood, duration
+    return (beats, bars, danceability, loudness, energy, tempo, mood, duration)
 
     #to return the id for unpausing the song
 
-def unpause_song():
+def unpause_song(uri=None):
     """
     unpauses the currently playing song at the beginning
     """
     sp = setup_credentials()
-    uri = get_track_uri()
+    if not uri:
+        uri = get_track_uri()
     sp.start_playback(uris = [uri])
 
 def pause_song():
@@ -75,7 +76,7 @@ def pause_song():
     sp = setup_credentials()
     sp.pause_playback()
 
-def get_track_id(name, artist=None):
+def get_track_id(name, artist):
     """
     Finds and returns a song ID given a track name
     """
@@ -86,18 +87,14 @@ def get_track_id(name, artist=None):
     #sets a query to search with replacing spaces with %20 for the search.
     q = 'track:'+name
     #adds the artist if they want to use it
-    if artist is not None:
+    if artist:
         artist.lstrip()
         artist.rstrip()
         q += ' AND artist:' + artist
-    print(q)
     try:
         results = spotify.search(q,limit=1)
-        print(results)
         id = results['tracks']['items'][0]['id']
-        return id
+        uri = results['tracks']['items'][0]['uri']
+        return (id, uri)
     except:
-        return "No Search Results"
-
-#beats, bars, danceability, loudness, energy, tempo, mood, duration = collect_data()
-#print(beats)
+        raise Exception('There were no search results')

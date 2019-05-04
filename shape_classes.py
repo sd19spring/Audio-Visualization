@@ -5,18 +5,19 @@ from pygame.locals import *
 from spotify_data import *
 from visualizer import *
 
-
 class Rectangle:
 	"""
 	Creates a rectangle shape class
 	"""
-	def __init__(self, x, y, danceability, energy, loudness, color):
+	def __init__(self, x, y, danceability, energy, loudness, color, screen_data):
 		"""
 		Origin is top right corner
 		"""
+		self.screen = screen_data
+
 		self.x = x
 		self.y = y
-		#probably want to implement a little bit of random in the speeds and sizes
+
 		self.width = int(random.randint(100,200)*energy)
 		self.height = int(random.randint(100, 200)*energy)
 
@@ -43,15 +44,15 @@ class Rectangle:
 		self.y += self.yspeed
 
 		#Defines how a rectange leaves and re-enters the screen
-		if self.xspeed > 0 and (self.x + self.width) > screen['width']:
+		if self.xspeed > 0 and (self.x + self.width) > self.screen['width']:
 			self.x = -self.width
 		elif self.xspeed < 0 and (self.x) < -self.width:
-			self.x = screen['width']
+			self.x = self.screen['width']
 
-		if self.yspeed > 0 and (self.y + self.height) > screen['height']:
+		if self.yspeed > 0 and (self.y + self.height) > self.screen['height']:
 			self.y = -self.height
 		elif self.yspeed < 0 and (self.y) < -self.width:
-			self.y = screen['height']
+			self.y = self.screen['height']
 
 	def update_fly(self):
 		"""
@@ -63,7 +64,7 @@ class Rectangle:
 		self.y += self.yspeed
 
 		#Defines how a rectange leaves and re-enters the screen
-		if self.xspeed > 0 and (self.x + self.width) > screen['width']:
+		if self.xspeed > 0 and (self.x + self.width) > self.screen['width']:
 			self.x = -self.width
 
 
@@ -71,24 +72,26 @@ class Rectangle:
 		"""
 		Moves the rectangle to a random location in the screen
 		"""
-		self.x = random.randint(10, screen['width']- 10)
-		self.y = random.randint(10, screen['height']- 10)
+		self.x = random.randint(10, self.screen['width']- 10)
+		self.y = random.randint(10, self.screen['height']- 10)
 
 	def draw(self):
 		"""
 		Draws the rectangle on the screen
 		"""
-		pygame.draw.rect(screen['window'], self.color, Rect([self.x, self.y], [self.width, self.height]))
+		pygame.draw.rect(self.screen['window'], self.color, Rect([self.x, self.y], [self.width, self.height]))
 
 
 class Circle:
     """
 	Creates a circle shape class
 	"""
-    def __init__(self, x, y, danceability, energy, loudness, color):
+    def __init__(self, x, y, danceability, energy, loudness, color, screen_data):
         """
 		Initializes the positions, color, and speeds for the circle
 		"""
+        self.screen = screen_data
+
         self.x = x
         self.y = y
         self.radius = int((100*danceability) + random.randint(0,20))
@@ -123,15 +126,15 @@ class Circle:
         self.y += self.yspeed
 
 		#defines how it leaves screen and reappears
-        if self.xspeed > 0 and (self.x + self.radius) > screen['width']:
+        if self.xspeed > 0 and (self.x + self.radius) > self.screen['width']:
             self.x = -self.radius
         elif self.xspeed < 0 and (self.x) < -self.radius:
-            self.x = screen['width']
+            self.x = self.screen['width']
 
-        if self.yspeed > 0 and (self.y + self.radius) > screen['height']:
+        if self.yspeed > 0 and (self.y + self.radius) > self.screen['height']:
             self.y = -self.radius
         elif self.xspeed < 0 and (self.y) < -self.radius:
-            self.x = screen['height']
+            self.x = self.screen['height']
 
     def update_bubbles(self):
         """
@@ -158,7 +161,7 @@ class Circle:
         self.y += self.yspeed
 
 		#Defines how a rectange leaves and re-enters the screen
-        if self.xspeed > 0 and (self.x + self.radius) > screen['width']:
+        if self.xspeed > 0 and (self.x + self.radius) > self.screen['width']:
             self.x = -self.radius
 
     def update_popcorn(self):
@@ -172,12 +175,12 @@ class Circle:
         """
         Moves the circle to a random location in the screen
         """
-        self.x = random.randint(10, screen['width']- 10)
-        self.y = random.randint(10, screen['height']- 10)
+        self.x = random.randint(10, self.screen['width']- 10)
+        self.y = random.randint(10, self.screen['height']- 10)
 
 
     def draw(self):
         """
         Draws the circle on the screen
         """
-        pygame.draw.circle(screen['window'], self.color, [int(self.x), int(self.y)], int(self.radius))
+        pygame.draw.circle(self.screen['window'], self.color, [int(self.x), int(self.y)], int(self.radius))
