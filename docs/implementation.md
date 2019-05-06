@@ -12,6 +12,8 @@ There are two different movement methods that determine how the rectangles move:
 
 Note that this program utilizes Pygame extensively.  For more information regarding how Pygame works please see here: https://www.pygame.org/docs/.
 
+An important aspect of our program is the way in which it interacts with Spotify's API.  Spotify's API is how our program data it needs to create the synchronized visualizations.  The following paragraph explains how our program interacts with Spotify's API.
+
 Each class has multiple methods to determine how the shapes moves throughout the visualization.  To ensure the shapes do not simply disappear from the frame, each class has a method that says if a shapes x or y coordinates exceed that of the screen then the coordinates should be reset.
 
 Click [here](index.md) if you miss our amazing homepage
