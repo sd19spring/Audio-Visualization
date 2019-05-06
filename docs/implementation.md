@@ -10,6 +10,8 @@ For Rectangles, their width and heights are determined by the energy of the song
 
 There are two different movement methods that determine how the rectangles move: floaty and fly.  An interesting element of this code is the part that ensures the ractangles do not dissappear off the screen.  Rather, if the x or y coordinates of a rectangle exceeds that of the screen then the rectangle is put back into the screen.  The Circle class has the floaty and fly movement methods and two more movement methods as well: bubbles and popcorn.  The bubbles method causes the circles to expand and shrink while the popcorn method causes the circles to 'pop' up the screen in a manner that is supposed to resemble popcorn kernels jumping up the microwavable bag.
 
+Note that this program utilizes Pygame extensively.  For more information regarding how Pygame works please see here: https://www.pygame.org/docs/.
+
 Each class has multiple methods to determine how the shapes moves throughout the visualization.  To ensure the shapes do not simply disappear from the frame, each class has a method that says if a shapes x or y coordinates exceed that of the screen then the coordinates should be reset.
 
 Click [here](index.md) if you miss our amazing homepage
