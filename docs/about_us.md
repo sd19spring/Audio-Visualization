@@ -2,7 +2,7 @@
 
 # About Us
 
-<img src="https://github.com/sd19spring/Audio-Visualization/blob/master/docs/images/Harrison_headshot.JPG" width="238" height="353" /> <img src="https://github.com/sd19spring/Audio-Visualization/blob/master/docs/images/David_headshot.JPG" width="330" height="353" /> <img src="https://github.com/sd19spring/Audio-Visualization/blob/master/docs/images/Alex_headshot.JPG" width="280" height="353" />
+<img src="images/Harrison_headshot.JPG" width="238" height="353" /> <img src="images/David_headshot.JPG" width="330" height="353" /> <img src="images/Alex_headshot.JPG" width="280" height="353" />
 
 From left to right: Harrison, David, and Alex <br/><br/>
 
