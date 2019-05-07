@@ -3,7 +3,7 @@
 # About Us
 
 
-![Harrison](images/Harrison_headshot.JPG =238x353) ![David](images/David_headshot.JPG =330x353) ![Alex](images/Alex_headshot.JPG =280x353)
+![Harrison](images/Harrison_headshot.JPG){:height="238px" width="353px"} ![David](images/David_headshot.JPG){:height="330px" width="353px"} ![Alex](images/Alex_headshot.JPG){:height="280px" width="353px"}
 From left to right: Harrison, David, and Alex <br/><br/>
 
 To learn more about our other professonial work, check us out on LinkedIn:
