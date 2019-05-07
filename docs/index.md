@@ -11,4 +11,6 @@ If you're thinking "wow this is awesome but song should I listen to with it?" We
 
 By David Tarazi, Alex Scott, and Harrison Mintz
 
-To learn more about the three of us click [HERE](about_us.md)
+To learn more about the three of us, click [HERE](about_us.md)
+
+To learn about using our program, click [HERE](starting.md)
