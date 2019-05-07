@@ -3,7 +3,7 @@
 # About Us
 
 
-![Harrison](images/Harrison_headshot) ![David](images/David_headshot) ![Alex](images/Alex_headshot)
+![Harrison](images/Harrison_headshot.JPG) ![David](images/David_headshot.JPG) ![Alex](images/Alex_headshot.JPG)
 From left to right: Harrison, David, and Alex <br/><br/>
 
 To learn more about our other professonial work, check us out on LinkedIn:
