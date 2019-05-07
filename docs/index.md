@@ -1,5 +1,5 @@
 Click on the image below check out our demo video!
-[![Pic of Program Output](images/David_headshop.JPG)](https://www.youtube.com/watch?v=NWApJ23NRqQ)
+[![Pic of Program Output](images/David_headshot.JPG)](https://www.youtube.com/watch?v=NWApJ23NRqQ)
 
 **Project Description**
 
