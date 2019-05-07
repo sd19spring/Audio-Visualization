@@ -13,18 +13,22 @@ class Rectangle:
 		"""
 		Origin is top right corner
 		"""
+		#pulls screen data from screen class
 		self.screen = screen_data
 
+		#defines x and y position at top right corner
 		self.x = x
 		self.y = y
 
+		#makes width and height as a function of energy with randomness
 		self.width = int(random.randint(100,200)*energy)
 		self.height = int(random.randint(100, 200)*energy)
 
+		#gets color from the mood in the visualizer class
 		self.color = color
+		#defines speeds as a function of danceability
 		self.xspeed = danceability*2
 		self.yspeed = danceability*2
-		self.expand_speed = loudness/random.randint(20,40)
 
 	def update(self, type):
 		"""
@@ -40,6 +44,7 @@ class Rectangle:
 		"""
 		Updates the screen with the floaty style
 		"""
+		#Changes position constantly
 		self.x += self.xspeed
 		self.y += self.yspeed
 
@@ -58,8 +63,10 @@ class Rectangle:
 		"""
 		Updates the screen with the "fly-by" style
 		"""
+		#Acceleration
 		self.xspeed = self.xspeed * 1.0025
 		self.yspeed = self.yspeed * 0.999
+		#Adds speed with acceleration
 		self.x += self.xspeed
 		self.y += self.yspeed
 
@@ -90,13 +97,17 @@ class Circle:
         """
 		Initializes the positions, color, and speeds for the circle
 		"""
+		#pulls screen data from screen class
         self.screen = screen_data
 
+		#position at center
         self.x = x
         self.y = y
+		#defines radius based on danceability
         self.radius = int((100*danceability) + random.randint(0,20))
         self.color = color
 
+		#defines speed based on danceability
         self.xspeed = danceability*2
         self.yspeed = danceability*2
         self.expand_speed = loudness/random.randint(20,40)
@@ -122,6 +133,7 @@ class Circle:
         """
         Updates the screen with the floaty style
         """
+		#constant motion of shape
         self.x += self.xspeed
         self.y += self.yspeed
 
@@ -140,6 +152,7 @@ class Circle:
         """
         Updates the screen with the bubbles style
         """
+		#constant expand/shrink rate
         self.radius += self.expand_speed
 
 		#if the circle is too small reset its location and size
@@ -155,8 +168,10 @@ class Circle:
         """
 		Updates the screen with the "fly-by" style
 		"""
+		#Acceleration
         self.xspeed = self.xspeed * 1.0025
         self.yspeed = self.yspeed * 0.999
+		#Motion with acceleration
         self.x += self.xspeed
         self.y += self.yspeed
 
@@ -168,6 +183,7 @@ class Circle:
         """
 		Updates the popcorn style
 		"""
+		#Move up fast, move sideways not as fast
         self.y += -7*self.yspeed
         self.x += self.xspeed
 

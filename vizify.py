@@ -56,17 +56,6 @@ play_frame.pack(expand = 'true', fill = 'both', side = TOP)
 playbtn = Button(play_frame, text = "play", command = execute)
 playbtn.pack(expand = 'true', side = TOP)
 
-"""
-I think we need multiprocessing to allow this to work
-
-stop_frame = Frame(window, bg = color)
-stop_frame.pack(expand = 'true', fill = 'both', side = TOP)
-stopbtn = Button(stop_frame, text = "stop", command = kill)
-stopbtn.pack(expand = 'true', side = TOP)
-
-kill function would quit pygame
-"""
-
 exitinstructions = Label(play_frame, bg = color, text = "press the escape key to quit at any time")
 exitinstructions.pack(expand = 'true', fill = 'both', side = TOP)
 

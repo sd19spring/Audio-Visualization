@@ -11,14 +11,19 @@ from spotify_data import *
 
 
 class Data:
+	"""
+	Holds all the data in a class for the current song
+	"""
 	def __init__(self, name=None, artist=None):
 		self.data = {}
+		# uses local function to pull data from spotify using collect_data function
 		self.get_data(name, artist)
 
 	def get_data(self, name, artist):
 		"""
 		Collects song data from Spotify
 		"""
+		# If there was no search input pull currently playing song data
 		if name is None:
 			#pauses the song
 			pause_song()
@@ -28,6 +33,7 @@ class Data:
 			self.data['uri'] = None
 
 		else:
+			# find uri and id of song for data to play
 			id, uri = get_track_id(name, artist)
 			self.data['uri'] = uri
 			self.data['beats'], self.data['bars'], self.data['danceability'], self.data['loudness'], self.data['energy'], self.data['tempo'], self.data['mood'], self.data['duration'] = collect_data(id)
@@ -87,7 +93,7 @@ class Display:
 		self.occurred = False
 		self.count = 1
 
-		#Establish two different types of circles for the visualization: floaty and bubbles
+		#Establish style types
 		self.styles = ("floaty", "bubbles", "fly", "popcorn")
 		self.style = "floaty"
 		self.style_count = 1
@@ -157,8 +163,7 @@ class Display:
 		Updates the shapes and display style. Also creates a transition between
 		styles during every 8th bar
 		'''
-		#updates the style and clears the shapes
-
+		#updates the style and clears the shapes every 8 bars by random selection
 		if self.bar_count % 8 == 0:
 			self.count = 1
 			self.shapes.clear()
@@ -191,6 +196,7 @@ class Display:
 		#use the count function so that it doesn't update every beat, every n beats
 		self.count += 1
 		if self.style == "floaty":
+			#Every 2 beats randomly change some of the shapes directions
 			if self.count % 2 == 0:
 				for shape in self.shapes:
 					if bool(random.getrandbits(1)):
@@ -199,20 +205,24 @@ class Display:
 						shape.yspeed = -shape.yspeed
 
 		if self.style == "bubbles":
+			#Every 4 beats 50% chance to switch expand to shrink
 			if self.count % 4 == 0:
 				for shape in self.shapes:
 					if bool(random.getrandbits(1)):
 						shape.expand_speed = -shape.expand_speed
+			#Every 8 Beats 50% chance to move to random location
 			if self.count % 8 == 0:
 				for shape in self.shapes:
 					if bool(random.getrandbits(1)):
 						shape.move_to_random()
 
 		if self.style == "fly":
+			#Make all the y speeds change direction every beat
 			for shape in self.shapes:
 				shape.yspeed = -shape.yspeed
 
 		if self.style == "popcorn":
+			#Every beat add a circle
 			if len(self.shapes) < self.numshapes:
 				self.shapes.append(Circle(	random.randint(10,self.screen['width']-10),
 											random.randint(10,self.screen['height']-10),
@@ -221,11 +231,14 @@ class Display:
 											self.data['loudness'],
 											self.colors[random.randint(0,3)],
 											self.screen))
+			#Randomly change the x direction of some of the shapes
 			for shape in self.shapes:
 				if bool(random.getrandbits(1)):
 					shape.xspeed = -shape.xspeed
+				#Move all the shapes to new random location
 				shape.move_to_random()
 
+		# update counts
 		self.beat_count += 1
 		if self.beat_count % 4 == 0:
 			self.bar_count += 1
@@ -276,6 +289,7 @@ class Display:
 					if event.key == K_ESCAPE:
 						self.cleanup()
 						return
+			#Limits update to the fps
 			self.clock.tick(self.screen['fps'])
 		self.cleanup()
 
@@ -285,8 +299,10 @@ def run_visualizer(name = None, artist = None):
 	"""
 	Collects data and runs the visualizer depending on the input
 	"""
+	#creates data, screen, and display
 	data = Data(name, artist)
 	screen = Screen()
-
 	disp = Display(data, screen)
+	
+	#executes the display
 	disp.execute()
