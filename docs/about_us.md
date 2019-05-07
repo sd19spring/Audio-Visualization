@@ -2,7 +2,7 @@
 
 # About Us
 
-<img src="images/Harrison_headshot.JPG" width="202.27" height="300" /> <img src="images/David_headshot.JPG" width="280.45" height="300" /> <img src="images/Alex_headshot.JPG" width="238" height="300" />
+<img src="images/Harrison_headshot.JPG" width="168.5" height="250" /> <img src="images/David_headshot.JPG" width="233.7" height="300" /> <img src="images/Alex_headshot.JPG" width="198.3" height="300" />
 
 From left to right: Harrison, David, and Alex <br/><br/>
 
