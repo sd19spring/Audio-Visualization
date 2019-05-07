@@ -1,5 +1,3 @@
-# Vizify
-
 Click on the image below check out our demo video!
 [![Pic of Program Output](https://github.com/sd19spring/Audio-Visualization/blob/master/docs/images/Video_Demo_Pic.jpg)](https://www.youtube.com/watch?v=NWApJ23NRqQ)
 
