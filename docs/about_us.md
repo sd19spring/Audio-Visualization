@@ -16,7 +16,7 @@ David: [LinkedIn](https://www.linkedin.com/in/david-tarazi-335437169/) <br/><br/
 
 We are more than just professionals though! Read on to learn more about what we do when we're not building mind-blowing Python programs.
 
-David: Just beginning his college path, David loves to go hiking and enjoys the outdoors. David looks forward to his path to becoming an engineer and can't wait to explore.
+David: Just beginning his college path, David loves to go hiking and climb trees. In his freetime, you could find David playing basketball and listening to his favorite music artist, Lil Uzi Vert. David would like to apply his knowledge in the robotics industry and work with automation. 
 
 Alex: An aviation enthusiast, Alex competed in Design, Build, Fly, a competition where students build airplanes to meet certain design parameters. As a soon-to-be college graduate, Alex is looking forward to entering the real world and becoming "the next Orville Wright with a splash of Amelia Earhart."
 
