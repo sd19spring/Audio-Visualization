@@ -2,8 +2,8 @@
 
 # About Us
 
+<img src="images/Harrison_headshot.JPG" width="238" height="353" /> <img src="images/David_headshot.JPG" width="330" height="353" /> <img src="images/Alex_headshot.JPG" width="280" height="353" />
 
-![Harrison](images/Harrison_headshot.JPG){:height="238px" width="353px"} ![David](images/David_headshot.JPG){:height="330px" width="353px"} ![Alex](images/Alex_headshot.JPG){:height="280px" width="353px"}
 From left to right: Harrison, David, and Alex <br/><br/>
 
 To learn more about our other professonial work, check us out on LinkedIn:
