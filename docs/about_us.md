@@ -8,11 +8,11 @@ From left to right: Harrison, David, and Alex <br/><br/>
 
 To learn more about our other professonial work, check us out on LinkedIn:
 
-Harrison: https://www.linkedin.com/in/harrisonmintz/
+Harrison: [LinkedIn](https://www.linkedin.com/in/harrisonmintz/)
 
-Alex: https://www.linkedin.com/in/alexander-scott-87a276107/
+Alex: [LinkedIn](https://www.linkedin.com/in/alexander-scott-87a276107/)
 
-David: https://www.linkedin.com/in/david-tarazi-335437169/ <br/><br/>
+David: [LinkedIn](https://www.linkedin.com/in/david-tarazi-335437169/) <br/><br/>
 
 We are more than just professionals though! Read on to learn more about what we do when we're not building mind-blowing Python programs.
 
