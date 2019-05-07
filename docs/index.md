@@ -8,7 +8,7 @@ The purpose of this program is to create engaging visualizations that play along
 
 ### To learn more about the implementation of our code click [HERE](implementation.md)
 
-If you're thinking "wow this is awesome but song should I listen to with it?" Well worry naught! Click [HERE](song_recs.md) for a list of our recommended songs to create cool visuals with.
+If you're thinking "wow this is awesome but song should I listen to with it?" Click [HERE](song_recs.md) for a list of our recommended songs to create cool visuals with.
 
 By David Tarazi, Alex Scott, and Harrison Mintz
 
