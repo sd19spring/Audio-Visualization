@@ -2,7 +2,7 @@
 
 Below is the project's UML Diagram.  This diagram provides a high level architectual overview of our code.
 
-![UML_Diagram](images/UML.jpg)
+![UML_Diagram](images/UML.png)
 
 When the program is first run, it utilizes tkinter to create an interactive GUI displayed below that enables the user to input songs. The play button is linked to an exectution function that runs the visualization. The visualization function collects Spotify data for the song, then plays the song through the user's Spotify account as it starts the visualization. When the visualization starts, it will choose a style at random and then create a bunch of instances of a shape class which has functions that are updated every frame. The visualization runs at roughly 120 fps and the shapes' positions are updated on every frame. The visualization class also has a timer with beat stamps from the Spotify data that was collected. As soon as the timer passes the beat stamp, it will iterate through the currently shown shapes and update the way they are moving to synchronize motion change with the song.
 
