@@ -106,6 +106,3 @@ venv.bak/
 # files we created
 config.py
 .cache-davidt315
-src
-visualizer_scotttest.py
-active_visualizer_test.py
