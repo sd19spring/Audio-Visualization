@@ -2,7 +2,7 @@
 
 [![Pic of Program Output](images/DemoLink.png)](https://www.youtube.com/watch?v=NWApJ23NRqQ)
 
-**Project Description**
+### Project Description
 
 The purpose of this program is to create engaging visualizations that play alongside a user's Spotify music. These visualizations utilize different quantitative descriptions of a song, such as its tempo, intensity, and danceability,to ensure the vibe of the visualization matches the vibe of the song. There are a few styles of visualization that are randomly selected throughout the duration of the song. Every eight bars the visual with transition to the next style. When the user first runs the program, they can use our interactive interface to search for songs to play on Spotify and create a visual for or simply press play and the algorithm will create a visual for whatever song the user is currently listening to. The goal of this program is to create a fun display that can go on in the background for the user to enhance their music experience.
 
