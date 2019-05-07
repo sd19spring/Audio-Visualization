@@ -1,6 +1,6 @@
 ### Click on the image below check out our demo video!
 
-[![Pic of Program Output](images/DemoLink.png)](https://www.youtube.com/watch?v=NWApJ23NRqQ)
+[![Pic of Program Output](images/DemoLink.png)](https://www.youtube.com/watch?v=SE8RHgkG06Y&feature=share)
 
 ### Project Description
 
