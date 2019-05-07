@@ -20,4 +20,4 @@ David: Just beginning his college path, David loves to go hiking and enjoys the 
 
 Alex: An aviation enthusiast, Alex competed in Design, Build, Fly, a competition where students build airplanes to meet certain design parameters. As a soon-to-be college graduate, Alex is looking forward to entering the real world and becoming "the next Orville Wright with a splash of Amelia Earhart."
 
-Harrison: A kombucha and coffee fiend, Harrison likes to spend his time walking along the ocean, drinking, and then frantically searching for bathrooms.  He also enjoys taking lots of creativity liberty while writing his peer's bios.  This summer he is heading off to LA to work as a marketing analyst at System1.
+Harrison: A kombucha and coffee fiend, Harrison likes to spend his time walking along the ocean, drinking, and then frantically searching for bathrooms.  This summer he is heading off to LA to work as a marketing analyst at System1.
